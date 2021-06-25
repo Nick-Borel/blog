@@ -95,7 +95,7 @@ if(isset($_POST['name']) && isset($_POST['email'])) {
      }
 
 
-    //  header( "refresh:2;url=form.php" );
+     header( "refresh:3;url=form.php" );
 }
 
 
