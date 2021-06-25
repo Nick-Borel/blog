@@ -86,7 +86,7 @@ if(isset($_POST['name']) && isset($_POST['email'])) {
     $mail->SetFrom($email, $name);
     $mail->Subject = $subject;
     $mail->Body = $message;
-    $mail->AddAddress("mbiakopclinton@gmail.com"); 
+    $mail->AddAddress("kamahangayonickborel@gmail.com"); 
 
      if(!$mail->Send()) {
         echo "Mailer Error: " . $mail->ErrorInfo;
