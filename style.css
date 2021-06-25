@@ -16,11 +16,12 @@ form {
     border: none;
     padding: 20px;
     width: 75vw;
-    height: 70vh;
+    height: 70%;
     border-radius: 5px;
 }
 
 .form_container {
     background-color: #dfe6e9;
-    height: 90vh;
+    height: 700px;
+    margin-bottom: 10px;
 }

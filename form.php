@@ -18,89 +18,7 @@
 
 <body>
 
-    <body>
-        <header class="topbar">
-            <input type="checkbox" id="check">
-            <label for="check" class="checkbtn">
-                <i class="fas fa-bars"><img src="menu.png" alt=""></i>
-            </label>
-            <label class="logo"><img src="LOGO-2018.jpg" alt=""></label>
-            <nav>
-                <a href="index.php">Accueil</a>
-                <a href="Articles.php">Articles</a>
-                <a href="#" class="active">A propos</a>
-                <a href="form.php">Contact</a>
-            </nav>
-            <div id="google_translate_element"></div>
-            <script type="text/javascript">
-            function googleTranslateElementInit() {
-                new google.translate.TranslateElement({
-                    pageLanguage: 'fr'
-                }, 'google_translate_element')
-            }
-            </script>
-            <script type="text/javascript"
-                src="//translate.google.com/translate_a/element.js?cb=gooleTranslateElementInit">
-            </script>
-            <div class="social">
-                <a href="#"><img src="facebook.png" title=""></a>
-                <a href="#"><img src="twitter.png" title=""></a>
-            </div>
-        </header>
-        <div class="banniere"></div>
-    </body>
-
-
-
-
-    <?php
-
-
-  require("./PHPMailer/PHPMailer.php");
-  require("./PHPMailer/SMTP.php");
-
-  
-if(isset($_POST['name']) && isset($_POST['email'])) {
-
-        $name = $_POST['name'];
-    $email = $_POST['email'];
-    $subject = $_POST['subject'];
-    $body = $_POST['body'];
-
-    $mail = new PHPMailer\PHPMailer\PHPMailer();
-    $mail->IsSMTP(); // enable SMTP
-
-    $mail->SMTPDebug = 0; // debugging: 1 = errors and messages, 2 = messages only
-    $mail->SMTPAuth = true; // authentication enabled
-    $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
-    $mail->Host = "smtp.gmail.com";
-    $mail->Port = 465; // or 587
-    //$mail->IsHTML(true);
-    $mail->Username = "mbutiji1@gmail.com";
-    $mail->Password = "developer-8081";
-    $mail->SetFrom($email, $name);
-    $mail->Subject = $subject;
-    $mail->Body = $body;
-    $mail->AddAddress("mbiakopclinton@gmail.com");
-
-     if(!$mail->Send()) {
-        //echo "Mailer Error: " . $mail->ErrorInfo;
-     } else {
-        echo "<p class='sent_alert'> Message has been sent </p>";
-     }
-
-
-     header( "refresh:2;url=form.php" );
-}
-
-
-
-
-?>
-
-
-
-
+    <h1> Envoyer nous un message </h1>
 
     <!----------------  Sending mail using PHPMailer  -------------->
     <?php
@@ -133,6 +51,61 @@ if(isset($_POST['name']) && isset($_POST['email'])) {
 
 
     <div class="form_container">
+
+
+        <?php
+
+
+  require("./PHPMailer/PHPMailer.php");
+  require("./PHPMailer/SMTP.php");
+
+  
+if(isset($_POST['name']) && isset($_POST['email'])) {
+
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
+    $body = $_POST['body'];
+    $message ="";
+
+    $message.= "Email: " . $email . "\r\n";
+    $message.= "Name: " . $name . "\r\n";
+     $message.= "Message: " . $email . "\r\n";
+
+    $mail = new PHPMailer\PHPMailer\PHPMailer();
+    $mail->IsSMTP(); // enable SMTP
+
+    $mail->SMTPDebug = 0; // debugging: 1 = errors and messages, 2 = messages only
+    $mail->SMTPAuth = true; // authentication enabled
+    $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
+    $mail->Host = "smtp.gmail.com";
+    $mail->Port = 465; // or 587
+    //$mail->IsHTML(true);
+    $mail->Username = "mbutiji1@gmail.com"; 
+    $mail->Password = "developer-8081"; 
+    $mail->SetFrom($email, $name);
+    $mail->Subject = $subject;
+    $mail->Body = $message;
+    $mail->AddAddress("mbiakopclinton@gmail.com"); 
+
+     if(!$mail->Send()) {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+     } else {
+        echo "<p class='sent_alert'> Message has been sent </p>";
+     }
+
+
+    //  header( "refresh:2;url=form.php" );
+}
+
+
+
+
+?>
+
+
+
+
 
         <form action="form.php" method="POST" class="mb-3">
 
