@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+p {
+    font-size: 20px;
+    font-weight: 700;
+    color: lightgreen;
+}
+
+form {
+    border: none;
+    padding: 20px;
+    width: 75vw;
+    height: 70vh;
+    border-radius: 5px;
+}
+
+.form_container {
+    background-color: #dfe6e9;
+    height: 90vh;
+}
