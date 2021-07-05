@@ -1,0 +1,249 @@
+*{
+    box-sizing: border-box;
+}
+
+body, html {
+    font-size: 16px;
+    color: rgba(0,0,0, o,87);
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    font-weight: 500;
+}
+
+.topbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: rgb(106, 250, 226);
+    z-index: 3;
+}
+
+.topbar nav{
+    float: left;
+    padding-top: 31px;
+    padding-bottom: 31px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.topbar nav a {
+    color: gray;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 53px;
+    line-height: 23px;
+}
+
+.topbar nav a:hover, .topbar nav a.active {
+    color: #000;
+}
+.social{
+    float: right;
+    width: auto;
+    padding-top: 23px;
+    padding-right: 30px;
+}
+.social a {
+    padding: 0 12px;
+    opacity: 0.5;
+    margin-left: -9px;
+}
+
+.social a:hover {
+    opacity: 3;
+}
+.logo img{
+    float: left;
+    height: 87px;
+    width: 150px;
+    padding-left: 5px;
+}
+.checkbtn{
+    font-size: 30px;
+    float: right;
+    line-height: 90px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+    margin-top: 10px;
+    
+}
+#check{
+    display: none;
+}
+@media (max-width: 952px){
+    label.logo img{
+        padding-left: 5px;
+        height: 100px;
+    }
+    .topbar nav a{
+        font-size: 16px;
+    }
+}
+@media (max-width: 858px){
+    .checkbtn{
+        display: block;
+    }
+    nav,.social{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #5f5ff7;
+        top: 95px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    .topbar nav a{
+        display: block;
+        margin: 50px 0;
+        line-height: 20px;
+    }
+    .topbar nav a{
+        font-size: 20px;
+        color: #fff;
+    }
+    #check:checked ~ nav{
+        left: 0;
+    }
+}
+.banniere {
+    width: auto;
+    height: 427px;
+    background: no-repeat center center / cover url("images (19).jpg"); 
+
+    -webkit-animation-name: ban;
+    -webkit-animation-duration: 9s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: normal;
+
+    animation-name: ban;
+    animation-duration: 12s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+@-webkit-keyframes ban{
+    0%{background-image: url("images (19).jpeg");}
+    33%{background-image: url("images (21).jpg");}
+    66%{background-image: url("2019-05-14.jpg");}
+    100%{background-image: url("images (19).jpeg");}
+}
+
+.main {
+    float: left;
+    background: #fff;
+    width: calc(100% - 375px);
+    box-shadow: 0 4px 30px rgb(0,0,0, .05);
+    position: relative;
+    z-index: 2;
+}
+
+.sidebar {
+    position: relative;
+    float: right;
+    background: #fbfbfb;
+    width: 375px;
+    padding: 40px;
+    font-size: 17px;
+    z-index: 1;
+}
+
+.sidebar-title {
+    font-size: 30px;
+    color: #000;
+    margin: 10px 0;
+}
+
+.sidebar-title:first-child {
+    margin-top: 0;
+}
+
+.sidebar ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.sidebar li{
+    padding: 6px 0;
+}
+.sidebar li:first-child {
+    padding-top: 0;
+}
+
+.sidebar li:last-child {
+    padding-bottom: 0;
+}
+
+.sidebar hr {
+    border: none;
+    background: #c4c4c4;
+    height: 1px;
+    margin: 50px 0;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}
+
+.sidebar a {
+    color: #9f9f9f;
+    text-decoration: none;
+}
+
+.article {
+    overflow: hidden;
+    margin: 50px 0;
+}
+
+.article a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.article a:hover {
+    text-decoration: underline;
+}
+.article-img {
+   float: left;
+   width: 300px; 
+   margin-right: 25px;
+}
+
+.article-img img {
+    width: 100%;
+    height: auto;
+}
+
+.article-date {
+    font-weight: 300;
+    color: rgb(0,0,0, .6);
+    margin-bottom: 3px;
+}
+
+.article-title {
+    font-size: 1.25rem;
+    line-height: 1.1;
+    font-family: "cardo", serif;
+    margin: 0 0 15px 0;
+}
+
+footer {
+    clear: both;
+    color: lightgreen;
+}
+.span1 {
+    float: left;
+    margin-left: 50px;
+}
+.span1 a {
+    color: lightgreen;
+}
+.span2 {
+    float: right;
+    margin-right: 50px;
+}
